@@ -58,11 +58,12 @@ De verificat în ziua 2: formatul fișierelor EFDA pentru România și dacă Han
 - [ ] M4. U-Net antrenat, cu split pe blocuri geografice; IoU și F1 pe test
 - [ ] M5. Tabel baseline vs. U-Net pe același test
 - [ ] M6. Inferență pe toată zona: hartă pe an și arie pe an, lângă cifrele Hansen/EFDA
-- [ ] M7. Document de 8–10 pagini și prezentare de 10 minute
+- [ ] M7. Document de 8–10 pagini și prezentare de 10 minute, **în engleză**
 - [ ] M8. Poți explica fiecare pas fără notițe (testele trecute)
+- [ ] M9. Set mic de test verificat manual (20–30 de patch-uri). *Urcat din N1:* etichetele EFDA vin tot dintr-o schimbare de NBR, deci un baseline pe dNBR e avantajat când e notat după ele; fără un test independent, comparația cu rețeaua nu e cinstită.
 
 **Dacă reușesc, în ordinea valorii**
-- [ ] N1. Set de test verificat manual (40–60 de patch-uri în QGIS) — devine musai pentru disertație
+- [ ] N1. Extinderea setului de test verificat manual la 40–60 de patch-uri (versiunea mică e M9)
 - [ ] N2. Câte 3 seed-uri la comparația principală, cu medie ± abatere
 - [ ] N3. Ablație pe benzi: RGB vs. RGB+NIR vs. toate 6
 - [ ] N4. Encoder preantrenat pe Sentinel-2 (SSL4EO-S12) vs. ImageNet

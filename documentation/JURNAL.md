@@ -57,3 +57,7 @@ Ce s-a făcut în fiecare zi, ce s-a decis și de ce. Se completează la sfârș
 **Rămas pe mai târziu**
 - Compozitul 2023 și figura de control a alinierii.
 - Exercițiile de ziua 1 și Testul 1 (Teodor).
+
+**Decizii luate dimineața**
+- Disertația este în engleză (scrisă și prezentată). Tot ce e public trece în engleză: cod, texte din figuri, README, TRACEABILITY, raport, prezentare, mesaje de commit. Notele de lucru (plan, jurnal) rămân în română. *Motiv:* repository-ul poate fi văzut și de alții.
+- Setul de test verificat manual urcă din „dacă reușesc" în „musai", în variantă mică (M9, 20–30 de patch-uri). *Motiv:* etichetele EFDA sunt derivate tot dintr-o schimbare de NBR, deci baseline-ul pe dNBR e avantajat când e notat după ele.

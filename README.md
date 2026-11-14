@@ -1,46 +1,50 @@
-# Pierderi de pădure în Carpații românești pe Sentinel-2
+# Forest loss in the Romanian Carpathians from Sentinel-2
 
-Proiect de disertație: detecția, cu rețele de segmentare, a zonelor în care pădurea a dispărut de la un an la altul (tăieri, doborâturi de vânt, gândaci de scoarță, incendii), cu hartă și arie în hectare.
+Master's dissertation project: segmentation networks that detect where forest cover disappeared from one year to the next (harvest, windthrow, bark beetle, fire), producing a map and the affected area in hectares.
 
-Stadiu: pregătirea datelor. Planul pe zile este în [documentation/PLAN_POC.md](documentation/PLAN_POC.md), iar starea fiecărui livrabil în [documentation/TRASABILITATE.md](documentation/TRASABILITATE.md). Exercițiul de încălzire (clasificare EuroSAT cu ResNet18) este în repository-ul separat `AI_LandCover_POC`.
+Status: data preparation. The day-by-day plan is in [documentation/PLAN_POC.md](documentation/PLAN_POC.md) and the state of each deliverable in [documentation/TRACEABILITY.md](documentation/TRACEABILITY.md). The warm-up exercise (EuroSAT classification with ResNet18) lives in the separate `AI_LandCover_POC` repository.
 
-## Date
+## Data
 
-| Ce | Sursă | Unde ajunge |
+| What | Source | Location |
 |---|---|---|
-| Etichete: European Forest Disturbance Atlas v3.0, 30 m, 1985–2024 | `Romania.zip` de pe [Zenodo](https://zenodo.org/records/21722408), despachetat | `data/efda/` |
-| Imagini: Sentinel-2 L2A, compozite de vară la 10 m | catalogul public [Earth Search](https://earth-search.aws.element84.com/v1), fără cont | `data/sentinel2/aoi_<nr>/s2_<an>.tif` |
+| Labels: European Forest Disturbance Atlas v3.0, 30 m, 1985–2024 | `Romania.zip` from [Zenodo](https://zenodo.org/records/21722408), unpacked | `data/efda/` |
+| Images: Sentinel-2 L2A summer composites at 10 m | public [Earth Search](https://earth-search.aws.element84.com/v1) catalogue, no account needed | `data/sentinel2/aoi_<n>/s2_<year>.tif` |
 
-Folderul `data/` nu este în Git. Totul e ținut în EPSG:3035, pe o grilă comună: 3×3 pixeli de imagine acoperă exact un pixel de etichetă.
+The `data/` folder is not tracked by Git. Everything is kept in EPSG:3035 on one shared grid: 3×3 image pixels cover exactly one label pixel.
 
-## Pași
+## Steps
 
-Toate comenzile se rulează din rădăcina proiectului.
+Run all commands from the project root.
 
 ```powershell
 python -m pip install -r requirements.txt
 
-# 1. Zonele candidate: cele mai perturbate celule de 46 km din România
+# 1. Candidate study areas: the most disturbed 46 km cells in Romania
 python -m forest.select_aoi
 
-# 2. Compozite Sentinel-2 pentru o zonă și câțiva ani
+# 2. Sentinel-2 composites for one area and a few years
 python -m forest.data.sentinel2 --candidate 1 --years 2023 2024
 
-# 3. Figură de control: imaginea cu etichetele suprapuse
+# 3. Control figure: the image with the labels drawn on top
 python -m forest.plot_quicklook --candidate 1 --year 2024
 ```
 
-## Structura
+## Layout
 
 ```text
 forest/
-  config.py            Căi și constante (grilă, benzi, sezon, mărimea zonei)
-  select_aoi.py        Clasamentul zonelor după hectarele perturbate
-  plot_quicklook.py    Verificarea vizuală a alinierii imagine–etichete
-  plot_style.py        Aspectul comun al figurilor
+  config.py            Paths and constants (grid, bands, season, area size)
+  select_aoi.py        Ranks areas by disturbed hectares
+  plot_quicklook.py    Visual check of image–label alignment
+  plot_style.py        Shared look of the figures
   data/
-    efda.py            Citirea etichetelor pe un an și un dreptunghi
-    sentinel2.py       Căutarea scenelor, mascarea norilor, mediana pe pixel
-results/               Tabele și figuri mici
-documentation/         Planul și matricea de trasabilitate
+    efda.py            Reads labels for one year and one rectangle
+    sentinel2.py       Scene search, cloud masking, per-pixel median
+results/               Small tables and figures
+documentation/         Plan, traceability matrix, work journal
 ```
+
+## A note on wording
+
+Satellites show the loss of forest cover, not its cause in a legal sense. This project never labels a detected loss as illegal.

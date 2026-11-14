@@ -3,7 +3,7 @@
 Disertația lui Teodor (master ML): detecția pierderilor de pădure din Carpații românești pe Sentinel-2, cu segmentare. POC cu termen **15 decembrie 2026**. Repository GitHub: `TeoCuculea/forest-loss-romania` (privat).
 
 - Planul pe zile, cu ce e musai (M1–M8) și ce e opțional (N1–N8): [documentation/PLAN_POC.md](documentation/PLAN_POC.md).
-- Starea fiecărui punct: [documentation/TRASABILITATE.md](documentation/TRASABILITATE.md). Se actualizează la fiecare pas terminat.
+- Starea fiecărui punct: [documentation/TRACEABILITY.md](documentation/TRACEABILITY.md). Se actualizează la fiecare pas terminat.
 - Jurnalul zilnic, cu deciziile și lista „de verificat": [documentation/JURNAL.md](documentation/JURNAL.md). Se completează la sfârșitul fiecărei sesiuni.
 - Exercițiul de încălzire (EuroSAT, ResNet18) și materialele de învățare de până acum sunt în `e:\AI-LandCover_POC` (`documentation/invatare/`, `exercises/`). Exercițiile noi, despre acest proiect, se pun aici, în `exercises/`.
 
@@ -21,7 +21,7 @@ Disertația lui Teodor (master ML): detecția pierderilor de pădure din Carpaț
 - Imagini: compozite de vară Sentinel-2 L2A în `data/sentinel2/aoi_<nr>/`, 6 benzi (B02, B03, B04, B08, B11, B12), valori = reflectanță × 10000, 0 = fără date.
 - Grila comună: EPSG:3035; 3×3 pixeli de 10 m acoperă exact un pixel de etichetă. Zonele au 46.080 m pe latură (1536 pixeli de etichetă, 18 patch-uri de 256).
 - `data/` și `*.pth` nu sunt în Git.
-- Cod, nume și comentarii în engleză; texte din figuri și documentație în română.
+- **Disertația e în engleză.** Tot ce poate vedea altcineva este în engleză: cod, comentarii, texte din figuri, README, TRACEABILITY, raportul, prezentarea și mesajele de commit. În română rămân doar notele de lucru (PLAN_POC, JURNAL, acest fișier) și discuțiile cu Teodor.
 - Figurile folosesc `forest/plot_style.py` și se salvează pe disc.
 - Din satelit se vede pierderea acoperirii forestiere, nu legalitatea ei: nu scrie „defrișare ilegală" nicăieri.
 

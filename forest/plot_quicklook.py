@@ -86,13 +86,13 @@ def main() -> None:
     axes[0].imshow(red_layer)
     axes[0].add_patch(plt.Rectangle((column / 6, row / 6), ZOOM_PIXELS / 6, ZOOM_PIXELS / 6,
                                     fill=False, edgecolor="white", linewidth=1.2))
-    axes[0].set_title(f"Zona întreagă, {arguments.year}", loc="center", fontsize=8.5)
+    axes[0].set_title(f"Whole area, {arguments.year}", loc="center", fontsize=8.5)
 
     axes[1].imshow(to_rgb(before[:, window[0], window[1]]))
-    axes[1].set_title(f"Detaliu 5 km, {arguments.year - 1}", loc="center", fontsize=8.5)
+    axes[1].set_title(f"5 km close-up, {arguments.year - 1}", loc="center", fontsize=8.5)
     axes[2].imshow(to_rgb(after[:, window[0], window[1]]))
     axes[2].contour(disturbed[window], levels=[0.5], colors=[RED], linewidths=0.9)
-    axes[2].set_title(f"Detaliu 5 km, {arguments.year}", loc="center", fontsize=8.5)
+    axes[2].set_title(f"5 km close-up, {arguments.year}", loc="center", fontsize=8.5)
 
     for ax in axes:
         ax.set_xticks([])

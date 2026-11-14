@@ -141,7 +141,7 @@ def save_map(table: pd.DataFrame, candidates: pd.DataFrame) -> None:
         spine.set_visible(False)
     years = f"{RANKING_YEARS[0]}–{RANKING_YEARS[-1]}"
     fig.colorbar(picture, ax=ax, pad=0.02, shrink=0.85,
-                 label=f"Pădure perturbată {years} (ha pe celulă de 46 km)")
+                 label=f"Disturbed forest {years} (ha per 46 km cell)")
     fig.tight_layout()
     save_figure(fig, FOREST_RESULTS_DIR / "aoi_candidates.png")
 
