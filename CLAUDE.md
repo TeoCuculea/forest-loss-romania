@@ -4,6 +4,7 @@ Disertația lui Teodor (master ML): detecția pierderilor de pădure din Carpaț
 
 - Planul pe zile, cu ce e musai (M1–M8) și ce e opțional (N1–N8): [documentation/PLAN_POC.md](documentation/PLAN_POC.md).
 - Starea fiecărui punct: [documentation/TRASABILITATE.md](documentation/TRASABILITATE.md). Se actualizează la fiecare pas terminat.
+- Jurnalul zilnic, cu deciziile și lista „de verificat": [documentation/JURNAL.md](documentation/JURNAL.md). Se completează la sfârșitul fiecărei sesiuni.
 - Exercițiul de încălzire (EuroSAT, ResNet18) și materialele de învățare de până acum sunt în `e:\AI-LandCover_POC` (`documentation/invatare/`, `exercises/`). Exercițiile noi, despre acest proiect, se pun aici, în `exercises/`.
 
 ## Cum se lucrează cu Teodor
