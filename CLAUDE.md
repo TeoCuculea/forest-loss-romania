@@ -1,31 +1,35 @@
 # Forest_Lost_Romania
 
-Disertația lui Teodor (master ML): detecția pierderilor de pădure din Carpații românești pe Sentinel-2, cu segmentare. POC cu termen **15 decembrie 2026**. Repository GitHub: `TeoCuculea/forest-loss-romania` (privat).
+Teodor's master's dissertation (ML): detecting forest cover loss in the Romanian Carpathians from Sentinel-2, with segmentation. POC due **15 December 2026**. GitHub repository: `TeoCuculea/forest-loss-romania` (private).
 
-- Planul pe zile, cu ce e musai (M1–M8) și ce e opțional (N1–N8): [documentation/PLAN_POC.md](documentation/PLAN_POC.md).
-- Starea fiecărui punct: [documentation/TRACEABILITY.md](documentation/TRACEABILITY.md). Se actualizează la fiecare pas terminat.
-- Jurnalul zilnic, cu deciziile și lista „de verificat": [documentation/JURNAL.md](documentation/JURNAL.md). Se completează la sfârșitul fiecărei sesiuni.
-- Exercițiul de încălzire (EuroSAT, ResNet18) și materialele de învățare de până acum sunt în `e:\AI-LandCover_POC` (`documentation/invatare/`, `exercises/`). Exercițiile noi, despre acest proiect, se pun aici, în `exercises/`.
+- Day-by-day plan, with what is a must (M1–M9) and what is optional (N1–N8): [documentation/POC_PLAN.md](documentation/POC_PLAN.md).
+- State of each item: [documentation/TRACEABILITY.md](documentation/TRACEABILITY.md). Update after every finished step.
+- Daily journal with decisions and the "to check" list: [documentation/JOURNAL.md](documentation/JOURNAL.md). Fill in at the end of every session.
+- The warm-up exercise (EuroSAT, ResNet18) and the learning material so far are in `e:\AI-LandCover_POC` (`documentation/invatare/`, `exercises/`), in Romanian. New exercises, about this project, go here in `exercises/`, in English.
 
-## Cum se lucrează cu Teodor
+## Language
 
-- Răspunde în română. Explică prin flow și prin legătura cu ce știe deja.
-- O zi de lucru: 5 întrebări din zilele trecute, teorie pe exemple mici, apoi el scrie o bucată delimitată, apoi citește ce ai scris tu, apoi 5 întrebări noi.
-- Bucățile marcate „scrii tu" în plan **nu se rezolvă în locul lui**. Dai indicii, îi revizuiești încercarea, spui ce parte e corectă și corectezi raționamentul.
-- Regula lui: nu rămâne în proiect cod pe care nu-l poate explica.
-- Când ceva amenință termenul, se taie din lista N, nu din M1–M8 și nu din înțelegere. Spune devreme.
+- **The dissertation is in English**, written and presented. Everything in this repository is in English: code, comments, figure text, all documentation, commit messages, exercises.
+- Talk to Teodor in Romanian, but keep the technical terms in English (training loop, batch norm, data leakage, IoU, weak labels…), so he learns the vocabulary he will write and present with.
 
-## Date și convenții
+## How to work with Teodor
 
-- Etichete: EFDA v3.0 în `data/efda/` (30 m, o bandă pe an, 1985 = banda 1; cauze: 1 vânt/gândaci, 2 incendiu, 3 tăiere).
-- Imagini: compozite de vară Sentinel-2 L2A în `data/sentinel2/aoi_<nr>/`, 6 benzi (B02, B03, B04, B08, B11, B12), valori = reflectanță × 10000, 0 = fără date.
-- Grila comună: EPSG:3035; 3×3 pixeli de 10 m acoperă exact un pixel de etichetă. Zonele au 46.080 m pe latură (1536 pixeli de etichetă, 18 patch-uri de 256).
-- `data/` și `*.pth` nu sunt în Git.
-- **Disertația e în engleză.** Tot ce poate vedea altcineva este în engleză: cod, comentarii, texte din figuri, README, TRACEABILITY, raportul, prezentarea și mesajele de commit. În română rămân doar notele de lucru (PLAN_POC, JURNAL, acest fișier) și discuțiile cu Teodor.
-- Figurile folosesc `forest/plot_style.py` și se salvează pe disc.
-- Din satelit se vede pierderea acoperirii forestiere, nu legalitatea ei: nu scrie „defrișare ilegală" nicăieri.
+- Explain through the flow and through what he already knows.
+- A working day: 5 recap questions from previous days, theory on small examples, then he writes a delimited piece, then he reads what you wrote, then 5 new questions.
+- Pieces marked "you write" in the plan **are not solved for him**. Give hints, review his attempt, say which part is right and correct the reasoning.
+- His rule: no code stays in the project that he cannot explain.
+- When something threatens the deadline, cut from the N list, not from M1–M9 and not from understanding. Say so early.
 
-## Comenzi
+## Data and conventions
+
+- Labels: EFDA v3.0 in `data/efda/` (30 m, one band per year, 1985 = band 1; agents: 1 wind/bark beetle, 2 fire, 3 harvest).
+- Images: Sentinel-2 L2A summer composites in `data/sentinel2/aoi_<n>/`, 6 bands (B02, B03, B04, B08, B11, B12), values = reflectance × 10000, 0 = no data.
+- Shared grid: EPSG:3035; 3×3 pixels of 10 m cover exactly one label pixel. Areas are 46,080 m on a side (1536 label pixels, 18 patches of 256).
+- `data/` and `*.pth` are not in Git.
+- Figures use `forest/plot_style.py` and are saved to disk.
+- Satellites show forest cover loss, not its legality: never write "illegal deforestation".
+
+## Commands
 
 ```powershell
 python -m forest.select_aoi
