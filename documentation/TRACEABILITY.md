@@ -17,7 +17,7 @@ States: **done**, **in progress**, **to do**.
 
 | # | What | Script | Result | State |
 |---|---|---|---|---|
-| M1 | Sentinel-2 composites, one area, at least 3 years | [forest/data/sentinel2.py](../forest/data/sentinel2.py) | `data/sentinel2/aoi_01/s2_<year>.tif`, log in `results/sentinel2_aoi_01.csv` | in progress: trial on 2 years |
+| M1 | Sentinel-2 composites, one area, at least 3 years | [forest/data/sentinel2.py](../forest/data/sentinel2.py) | `data/sentinel2/aoi_01/s2_<year>.tif`, log in `results/sentinel2_aoi_01.csv` | in progress: 2023 and 2024 built, no gaps; a third year missing |
 | M2 | EFDA and Hansen labels aligned to the images | [forest/data/efda.py](../forest/data/efda.py) | EFDA read directly on the shared grid; Hansen missing | in progress |
 | M3 | dNBR baseline: mask, red overlay map, hectares | — | — | to do (day 3; Teodor writes `nbr`, `iou`) |
 | M4 | U-Net with block split; IoU and F1 on test | — | — | to do (days 4–6) |
@@ -32,4 +32,4 @@ States: **done**, **in progress**, **to do**.
 | What | Script | Result | State |
 |---|---|---|---|
 | Choosing the study area | [forest/select_aoi.py](../forest/select_aoi.py) | [aoi_candidates.csv](../results/aoi_candidates.csv), [aoi_candidates.png](../results/aoi_candidates.png) | 3 candidates proposed; Teodor chooses |
-| Checking image–label alignment | [forest/plot_quicklook.py](../forest/plot_quicklook.py) | `results/quicklook_aoi_01_2024.png` | in progress |
+| Checking image–label alignment | [forest/plot_quicklook.py](../forest/plot_quicklook.py) | [quicklook_aoi_01_2024.png](../results/quicklook_aoi_01_2024.png) | grids match exactly; visual check of label timing still open |

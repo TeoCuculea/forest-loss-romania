@@ -6,6 +6,7 @@ Ce s-a făcut în fiecare zi, ce s-a decis și de ce. Se completează la sfârș
 
 - [ ] **Ce date oficiale despre tăieri se pot obține efectiv** (SUMAL 2.0 / Inspectorul Pădurii): se pot descărca în bloc parchetele autorizate, cu contur și an, sau doar consulta pe rând? De răspuns înainte de discuția cu proful despre temă.
 - [ ] Alegerea zonei de studiu dintre cele trei candidate (`results/aoi_candidates.csv`).
+- [ ] Decalajul de timp dintre etichetă și imagine (vezi 15 nov): de descărcat 2025 și comparat.
 - [ ] Dacă Hansen Global Forest Change are deja versiunea 1.13 (cu anul 2025).
 - [ ] Răspunsul profului la mesaj și la propunerea de temă; de întrebat dacă întrebările de cercetare Î1–Î4 sunt de ajuns.
 
@@ -61,3 +62,8 @@ Ce s-a făcut în fiecare zi, ce s-a decis și de ce. Se completează la sfârș
 **Decizii luate dimineața**
 - Disertația este în engleză (scrisă și prezentată). Tot ce e public trece în engleză: cod, texte din figuri, README, TRACEABILITY, raport, prezentare, mesaje de commit. Notele de lucru (plan, jurnal) rămân în română. *Motiv:* repository-ul poate fi văzut și de alții.
 - Setul de test verificat manual urcă din „dacă reușesc" în „musai", în variantă mică (M9, 20–30 de patch-uri). *Motiv:* etichetele EFDA sunt derivate tot dintr-o schimbare de NBR, deci baseline-ul pe dNBR e avantajat când e notat după ele.
+
+**Rezultatul probei de descărcare**
+- Compozitele de vară 2023 și 2024 pentru zona 1 sunt gata: 4608×4608 pixeli, 6 benzi, fără goluri (9–12 observații senine pe pixel, din 16 zile).
+- Grila imaginilor cade exact pe grila etichetelor (decalaj întreg în pixeli de etichetă, 3×3 pixeli pe unul). M2 e rezolvat pentru EFDA.
+- Rămâne deschis: unele contururi din 2024 cad pe teren care în compozitul de vară 2024 arată încă împădurit. Probabil tăieri de toamnă, vizibile abia în 2025. De verificat cu compozitul 2025, înainte de a fixa regula „eticheta anului t se vede în imaginea anului t sau t+1".
