@@ -1,0 +1,15 @@
+numpy
+pandas
+matplotlib
+rasterio
+pyproj
+scikit-learn
+torch
+torchvision
+pystac-client
+odc-stac
+xarray
+rioxarray
+geopandas
+dask
+python-docx
