@@ -2,7 +2,7 @@
 
 Master's dissertation project: segmentation networks that detect where forest cover disappeared from one year to the next (harvest, windthrow, bark beetle, fire), producing a map and the affected area in hectares.
 
-Status: data preparation. The day-by-day plan is in [documentation/PLAN_POC.md](documentation/PLAN_POC.md) and the state of each deliverable in [documentation/TRACEABILITY.md](documentation/TRACEABILITY.md). The warm-up exercise (EuroSAT classification with ResNet18) lives in the separate `AI_LandCover_POC` repository.
+Status: data preparation. The day-by-day plan is in [documentation/POC_PLAN.md](documentation/POC_PLAN.md) and the state of each deliverable in [documentation/TRACEABILITY.md](documentation/TRACEABILITY.md). The warm-up exercise (EuroSAT classification with ResNet18) lives in the separate `AI_LandCover_POC` repository.
 
 ## Data
 
