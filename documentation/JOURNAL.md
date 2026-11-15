@@ -4,7 +4,8 @@ What was done each day, what was decided and why. Filled in at the end of every 
 
 ## To check (do not forget)
 
-- [ ] **Which official harvest data can actually be obtained** (SUMAL 2.0 / Inspectorul Pădurii): can authorised harvest sites be downloaded in bulk, with outline and year, or only looked up one by one? Answer before discussing the topic with the supervisor.
+- [x] **Which official harvest data can actually be obtained** (SUMAL 2.0 / Inspectorul Pădurii): checked on 15 Nov from public sources, see that day's entry. Short answer: points, not outlines; no bulk download found.
+- [ ] Open the Inspectorul Pădurii map by hand over area 1: how many harvest permits (APV) appear, do old (closed) ones stay visible, is there any date in the details window?
 - [ ] Choice of study area among the three candidates (`results/aoi_candidates.csv`).
 - [ ] Time lag between label and image (see 15 Nov): download 2025 and compare.
 - [ ] Whether Hansen Global Forest Change already has version 1.13 (with 2025).
@@ -57,6 +58,19 @@ What was done each day, what was decided and why. Filled in at the end of every 
 - Separate repository for the forest work. *Reason:* the old one stays the warm-up exercise, clean, to be shown as such.
 - The dissertation is in English, written and presented, so everything in this repository is in English, including the plan and this journal. The EuroSAT repository stays as it is. *Reason:* the repository may be seen by others.
 - The manually verified test set moves from "nice to have" to "must", in a small version (M9, 20–30 patches). *Reason:* EFDA labels are themselves derived from an NBR change, so a dNBR baseline has an advantage when scored against them.
+
+**Official harvest data: what can be obtained (checked from public sources)**
+- The public portal inspectorulpadurii.ro (SUMAL 2.0) shows each harvest permit (APV, *act de punere în valoare*) as **one point** on a map, not as an outline. Fields the page displays: permit number, status, county, initial volume, number of inventoried trees, species groups (conifer/broadleaf), linked transport notices. No date field was seen in the page code. The only polygons the page draws are administrative units.
+- The map can be filtered by forest district, permit status and permit number. No export button and no documented public interface for bulk download were found; nothing on data.gov.ro either. Transport notices are visible only for the last few days.
+- The portal's data interface was not queried by script: it is undocumented and no terms of use were found, so automated collection is not assumed to be allowed.
+- Forest management plans (stand outlines) are not open GIS data; the public ones are mostly PDF, often redacted.
+- The official "forest loss alerts" inside SUMAL are themselves produced from Sentinel/Landsat change detection, so they are not independent ground truth.
+- NGOs (Agent Green, Declic, Greenpeace) have complained since 2021 that the public part shows less than Government Decision 497/2020 promises. News sources found are mostly from 2020–2022; the present state of the portal must be confirmed by opening it.
+
+**Consequence for the project**
+- Official records cannot serve as segmentation labels (no outlines). EFDA stays the label source and the hand-verified test set (M9) stays the reference for scoring.
+- Realistic use, as an optional item for the dissertation and not for the POC: for each detected loss patch, check whether a permit point lies within some distance ("loss with / without a nearby permit"), with wording that never implies illegality.
+- Possible way to get more: a written request under the public-information law (544/2001) to the Ministry of Environment or the local Forest Guard for the permits of one forest district. Answer takes up to 30 days, so it cannot be relied on for 15 December.
 
 **Mistakes caught**
 - The `data/` rule in `.gitignore` also hid the code folder `src/data/` in the EuroSAT project; three files were missing from GitHub. Fixed and pushed.
