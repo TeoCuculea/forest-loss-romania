@@ -1,3 +1,4 @@
 year,scenes,days,rows,columns,share_without_data,median_clear_observations,file
 2023,26,16,4608,4608,0.0000,9.0000,s2_2023.tif
 2024,28,16,4608,4608,0.0000,12.0000,s2_2024.tif
+2025,30,16,4608,4608,0.0000,15.0000,s2_2025.tif
